@@ -203,8 +203,19 @@ impl Session {
     /// Fetch, unpack, and install a package matching the input requirements.
     pub fn install_package(&mut self, name: String, version: &VersionSpec) -> Fallible<Version> {
         // fetches and unpacks package
-        let fetched_package = self.fetch_package(name, version)?;
+        let fetched_package = self.fetch_package(name.clone(), version)?;
         let package_version = fetched_package.version();
+
+        // if the package is already installed, don't re-install it
+        // TODO: accept --force for this?
+        if let Fetched::Installed(pkg_version) = fetched_package {
+            let version = pkg_version.version.clone();
+            eprintln!(
+                "Package `{}` is up-to-date, version {} already installed",
+                name, version
+            );
+            return Ok(version);
+        }
 
         let use_platform;
 
