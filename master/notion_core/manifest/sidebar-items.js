@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Manifest","A Node manifest file."]]});

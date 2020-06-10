@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["arg0",""],["command_for",""]],"struct":[["Binary","Represents a delegated binary executable."],["NoArg0Error",""],["NoGlobalError",""],["Node","Represents a Node executable."],["Script","Represents a delegated script."]],"trait":[["Tool","Represents a command-line tool that Notion shims delegate to."]]});

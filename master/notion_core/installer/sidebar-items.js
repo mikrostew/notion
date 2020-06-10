@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Installed","The result of a requested installation."]],"mod":[["node","Provides the `Installer` type, which represents a provisioned Node installer."]]});

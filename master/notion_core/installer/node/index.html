@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `node` mod in crate `notion_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, node">
+
+    <title>notion_core::installer::node - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css"
+          id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Module node</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Re-exports</a></li><li><a href="#structs">Structs</a></li><li><a href="#constants">Constants</a></li></ul></div><p class='location'><a href='../../index.html'>notion_core</a>::<wbr><a href='../index.html'>installer</a></p><script>window.sidebarCurrent = {name: 'node', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>notion_core</a>::<wbr><a href='../index.html'>installer</a>::<wbr><a class="mod" href=''>node</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/notion_core/installer/node.rs.html#1-87' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Provides the <code>Installer</code> type, which represents a provisioned Node installer.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Re-exports</a></h2>
+<table><tr><td><code>use std::fs::<a class="struct" href="https://doc.rust-lang.org/nightly/std/fs/struct.File.html" title="struct std::fs::File">File</a>;</code></td></tr><tr><td><code>use std::fs::<a class="fn" href="https://doc.rust-lang.org/nightly/std/fs/fn.rename.html" title="fn std::fs::rename">rename</a>;</code></td></tr><tr><td><code>use std::string::<a class="trait" href="https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html" title="trait alloc::string::ToString">ToString</a>;</code></td></tr><tr><td><code>use <a class="mod" href="../../../notion_core/path/index.html" title="mod notion_core::path">path</a>;</code></td></tr><tr><td><code>use node_archive::<a class="struct" href="../../../node_archive/tarball/struct.Archive.html" title="struct node_archive::tarball::Archive">Archive</a>;</code></td></tr><tr><td><code>use node_archive::<a class="struct" href="../../../node_archive/tarball/struct.Cached.html" title="struct node_archive::tarball::Cached">Cached</a>;</code></td></tr><tr><td><code>use node_archive::<a class="struct" href="../../../node_archive/tarball/struct.Remote.html" title="struct node_archive::tarball::Remote">Remote</a>;</code></td></tr><tr><td><code>use node_archive::<a class="trait" href="../../../node_archive/tarball/trait.Source.html" title="trait node_archive::tarball::Source">Source</a>;</code></td></tr><tr><td><code>use style::<a class="fn" href="../../../notion_core/style/fn.progress_bar.html" title="fn notion_core::style::progress_bar">progress_bar</a>;</code></td></tr><tr><td><code>use catalog::<a class="struct" href="../../../notion_core/catalog/struct.NodeCatalog.html" title="struct notion_core::catalog::NodeCatalog">NodeCatalog</a>;</code></td></tr><tr><td><code>use super::<a class="enum" href="../../../notion_core/installer/enum.Installed.html" title="enum notion_core::installer::Installed">Installed</a>;</code></td></tr><tr><td><code>use notion_fail::<a class="type" href="../../../notion_fail/type.Fallible.html" title="type notion_fail::Fallible">Fallible</a>;</code></td></tr><tr><td><code>use notion_fail::<a class="trait" href="../../../notion_fail/trait.ResultExt.html" title="trait notion_fail::ResultExt">ResultExt</a>;</code></td></tr><tr><td><code>use semver::Version;</code></td></tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Installer.html"
+                                  title='struct notion_core::installer::node::Installer'>Installer</a></td>
+                           <td class='docblock-short'>
+                                <p>A provisioned Node installer.</p>
+
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PUBLIC_NODE_SERVER_ROOT.html"
+                                  title='constant notion_core::installer::node::PUBLIC_NODE_SERVER_ROOT'>PUBLIC_NODE_SERVER_ROOT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "notion_core";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

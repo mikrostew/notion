@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["path_for","Produces a modified version of the current `PATH` environment variable that will find Node.js executables in the installation directory for the given version of Node instead of in the Notion shim directory."]]});

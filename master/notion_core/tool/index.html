@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `tool` mod in crate `notion_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, tool">
+
+    <title>notion_core::tool - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Module tool</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Re-exports</a></li><li><a href="#structs">Structs</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../index.html'>notion_core</a></p><script>window.sidebarCurrent = {name: 'tool', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>notion_core</a>::<wbr><a class="mod" href=''>tool</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/notion_core/tool.rs.html#1-164' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Traits and types for executing command-line tools.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Re-exports</a></h2>
+<table><tr><td><code>use std::env::<a class="fn" href="https://doc.rust-lang.org/nightly/std/env/fn.args_os.html" title="fn std::env::args_os">args_os</a>;</code></td></tr><tr><td><code>use std::env::<a class="struct" href="https://doc.rust-lang.org/nightly/std/env/struct.ArgsOs.html" title="struct std::env::ArgsOs">ArgsOs</a>;</code></td></tr><tr><td><code>use std::ffi::<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsStr.html" title="struct std::ffi::os_str::OsStr">OsStr</a>;</code></td></tr><tr><td><code>use std::ffi::<a class="struct" href="https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html" title="struct std::ffi::os_str::OsString">OsString</a>;</code></td></tr><tr><td><code>use std::process::<a class="struct" href="https://doc.rust-lang.org/nightly/std/process/struct.Command.html" title="struct std::process::Command">Command</a>;</code></td></tr><tr><td><code>use std::process::<a class="fn" href="https://doc.rust-lang.org/nightly/std/process/fn.exit.html" title="fn std::process::exit">exit</a>;</code></td></tr><tr><td><code>use std::path::<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html" title="struct std::path::Path">Path</a>;</code></td></tr><tr><td><code>use std::marker::<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>;</code></td></tr><tr><td><code>use session::<a class="struct" href="../../notion_core/session/struct.Session.html" title="struct notion_core::session::Session">Session</a>;</code></td></tr><tr><td><code>use notion_fail::<a class="trait" href="../../notion_fail/trait.NotionFail.html" title="trait notion_fail::NotionFail">NotionFail</a>;</code></td></tr><tr><td><code>use notion_fail::<a class="trait" href="../../notion_fail/trait.FailExt.html" title="trait notion_fail::FailExt">FailExt</a>;</code></td></tr><tr><td><code>use notion_fail::<a class="type" href="../../notion_fail/type.Fallible.html" title="type notion_fail::Fallible">Fallible</a>;</code></td></tr><tr><td><code>use <a class="mod" href="../../notion_core/env/index.html" title="mod notion_core::env">env</a>;</code></td></tr><tr><td><code>use <a class="mod" href="../../notion_core/style/index.html" title="mod notion_core::style">style</a>;</code></td></tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Binary.html"
+                                  title='struct notion_core::tool::Binary'>Binary</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents a delegated binary executable.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NoArg0Error.html"
+                                  title='struct notion_core::tool::NoArg0Error'>NoArg0Error</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NoGlobalError.html"
+                                  title='struct notion_core::tool::NoGlobalError'>NoGlobalError</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Node.html"
+                                  title='struct notion_core::tool::Node'>Node</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents a Node executable.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Script.html"
+                                  title='struct notion_core::tool::Script'>Script</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents a delegated script.</p>
+
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Tool.html"
+                                  title='trait notion_core::tool::Tool'>Tool</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents a command-line tool that Notion shims delegate to.</p>
+
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.arg0.html"
+                                  title='fn notion_core::tool::arg0'>arg0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.command_for.html"
+                                  title='fn notion_core::tool::command_for'>command_for</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "notion_core";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
